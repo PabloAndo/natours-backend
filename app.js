@@ -9,8 +9,8 @@ const app = express();
 // 1) MIDDLEWARES
 
 app.use(morgan('dev'));
-
-app.use(express.json()); // middleware
+app.use(express.json()); // to access the body of the request
+app.use(express.static(`${__dirname}/public`));
 
 app.use((req, res, next) => {
   console.log('Hello from the middleware! 🐱‍🐉');
